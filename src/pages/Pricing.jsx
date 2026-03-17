@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { Check } from 'lucide-react'
 import SectionLabel from '../components/SectionLabel'
 import CTASection from '../components/CTASection'
+import { appRoutes } from '../config'
 
 const plans = [
   {
@@ -11,6 +12,7 @@ const plans = [
     period: 'Free forever \u00b7 1 user',
     cta: 'Get Started Free',
     ctaStyle: 'outline',
+    href: `${appRoutes.signup}?plan=starter`,
     features: [
       'Basic quoting & invoicing',
       'Up to 5 active jobs',
@@ -28,6 +30,7 @@ const plans = [
     ctaStyle: 'primary',
     featured: true,
     badge: 'Most Popular',
+    href: `${appRoutes.trial}`,
     features: [
       'Unlimited jobs & invoices',
       'AI scheduling & dispatch',
@@ -47,6 +50,7 @@ const plans = [
     period: 'Up to 15 users \u00b7 +$15/user after',
     cta: 'Start Free Trial',
     ctaStyle: 'primary',
+    href: `${appRoutes.signup}?plan=business&trial=true`,
     features: [
       'Everything in Pro',
       'AI route optimization',
@@ -65,6 +69,8 @@ const plans = [
     period: 'Unlimited users \u00b7 flat rate',
     cta: 'Contact Sales',
     ctaStyle: 'outline',
+    href: '/about',
+    isInternal: true,
     features: [
       'Everything in Business',
       'Full AI suite (predictions, NLP)',
@@ -176,15 +182,17 @@ export default function Pricing() {
               </p>
               <p className="text-xs text-nx-muted2 mt-1 mb-6">{plan.period}</p>
 
-              <button
-                className={`w-full text-sm font-semibold py-2.5 rounded-lg mb-6 transition-all ${
+              <a
+                href={plan.isInternal ? undefined : plan.href}
+                onClick={plan.isInternal ? () => window.location.href = plan.href : undefined}
+                className={`block w-full text-sm font-semibold py-2.5 rounded-lg mb-6 transition-all text-center ${
                   plan.ctaStyle === 'primary'
                     ? 'bg-nx-purple text-white hover:bg-nx-purple-dark'
                     : 'border border-nx-border2 text-nx-text2 hover:border-nx-purple hover:text-nx-text'
                 }`}
               >
                 {plan.cta}
-              </button>
+              </a>
 
               <ul className="space-y-2.5">
                 {plan.features.map((f) => (

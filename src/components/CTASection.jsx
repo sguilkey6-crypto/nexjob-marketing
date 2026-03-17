@@ -1,11 +1,16 @@
 import { ButtonPrimary } from './Button'
+import { appRoutes } from '../config'
 
 export default function CTASection({
   title = 'Ready to run your business on autopilot?',
   subtitle = 'Join thousands of trade pros who stopped juggling spreadsheets and started growing their businesses.',
   buttonText = 'Start Free Trial',
   buttonTo,
+  buttonHref,
 }) {
+  // Default: link to Rails app signup if no explicit destination
+  const resolvedHref = buttonHref || (!buttonTo ? appRoutes.trial : undefined)
+
   return (
     <section className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
@@ -19,8 +24,8 @@ export default function CTASection({
             {subtitle}
           </p>
           <div className="relative z-10">
-            <ButtonPrimary size="lg" to={buttonTo}>
-              {buttonText} <span>→</span>
+            <ButtonPrimary size="lg" to={buttonTo} href={resolvedHref}>
+              {buttonText} <span>\u2192</span>
             </ButtonPrimary>
           </div>
         </div>

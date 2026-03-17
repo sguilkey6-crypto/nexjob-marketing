@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import { appRoutes } from '../config'
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -40,14 +41,20 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA — linked to Rails app */}
         <div className="hidden md:flex items-center gap-3">
-          <button className="text-sm font-medium text-nx-muted hover:text-nx-text px-4 py-2 transition-colors">
+          <a
+            href={appRoutes.login}
+            className="text-sm font-medium text-nx-muted hover:text-nx-text px-4 py-2 transition-colors"
+          >
             Log In
-          </button>
-          <button className="text-sm font-semibold text-white bg-nx-purple hover:bg-nx-purple-dark px-5 py-2 rounded-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-500/30">
+          </a>
+          <a
+            href={appRoutes.trial}
+            className="text-sm font-semibold text-white bg-nx-purple hover:bg-nx-purple-dark px-5 py-2 rounded-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-500/30"
+          >
             Start Free Trial
-          </button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -75,10 +82,12 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="mt-3 flex flex-col gap-2">
-            <button className="text-sm font-medium text-nx-muted py-2">Log In</button>
-            <button className="text-sm font-semibold text-white bg-nx-purple py-2.5 rounded-lg">
+            <a href={appRoutes.login} className="text-sm font-medium text-nx-muted py-2 text-center">
+              Log In
+            </a>
+            <a href={appRoutes.trial} className="text-sm font-semibold text-white bg-nx-purple py-2.5 rounded-lg text-center">
               Start Free Trial
-            </button>
+            </a>
           </div>
         </div>
       )}

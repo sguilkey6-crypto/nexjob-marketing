@@ -3,6 +3,7 @@ import { ButtonPrimary, ButtonOutline } from '../components/Button'
 import SectionLabel from '../components/SectionLabel'
 import FadeIn from '../components/FadeIn'
 import CTASection from '../components/CTASection'
+import { appRoutes } from '../config'
 
 const heroProofs = [
   'Free forever plan',
@@ -11,25 +12,25 @@ const heroProofs = [
   'Set up in under 5 minutes',
 ]
 
-const trades = ['❄️ HVAC', '🔨 Handyman', '⚡ Electrical', '🚿 Plumbing', '🌿 Landscaping', '🧹 Cleaning', '🏗️ Roofing', '🎨 Painting']
+const trades = ['\u2744\ufe0f HVAC', '\ud83d\udd28 Handyman', '\u26a1 Electrical', '\ud83d\udebf Plumbing', '\ud83c\udf3f Landscaping', '\ud83e\uddf9 Cleaning', '\ud83c\udfd7\ufe0f Roofing', '\ud83c\udfa8 Painting']
 
 const features = [
-  { icon: '📋', title: 'Smart Quoting', desc: 'Create professional quotes in seconds. AI suggests pricing based on job type, materials, and your history. Clients approve with one tap.', color: 'bg-purple-500/10' },
-  { icon: '📅', title: 'AI Scheduling', desc: 'Drag-and-drop calendar with AI-powered auto-assignment. Matches technicians by skill, location, and availability. No more double-bookings.', color: 'bg-cyan-500/10' },
-  { icon: '🗺️', title: 'Route Optimization', desc: 'Real turn-by-turn routing with multi-stop optimization. Traffic-aware ETAs. Your crew saves hours and fuel every week.', color: 'bg-green-500/10' },
-  { icon: '💰', title: 'Invoicing & Payments', desc: 'Auto-generate invoices from completed jobs. Accept cards, ACH, Apple Pay, Google Pay. Clients pay online in your branded portal.', color: 'bg-yellow-500/10' },
-  { icon: '👥', title: 'Client CRM', desc: 'Full client profiles with service history, lifetime value, communication log, and satisfaction scores. Know every customer like your best one.', color: 'bg-red-500/10' },
-  { icon: '📱', title: 'Offline-First Mobile', desc: "Your crew works everywhere \u2014 even without signal. Full job details, forms, and photos cached offline. Auto-syncs when connectivity returns.", color: 'bg-orange-500/10' },
-  { icon: '💬', title: 'Two-Way SMS', desc: 'Text clients and crew from one dashboard. Automated appointment reminders, on-my-way alerts, and follow-ups \u2014 included in every plan.', color: 'bg-blue-500/10' },
-  { icon: '📊', title: 'Real Analytics', desc: "Not basic pie charts. Custom dashboards, revenue trends, technician scorecards, job profitability \u2014 the insights your business actually needs.", color: 'bg-violet-500/10' },
-  { icon: '🌐', title: 'Client Portal', desc: 'A branded self-serve portal where your customers approve quotes, track their technician in real-time, pay invoices, and book services 24/7.', color: 'bg-teal-500/10' },
+  { icon: '\ud83d\udccb', title: 'Smart Quoting', desc: 'Create professional quotes in seconds. AI suggests pricing based on job type, materials, and your history. Clients approve with one tap.', color: 'bg-purple-500/10' },
+  { icon: '\ud83d\udcc5', title: 'AI Scheduling', desc: 'Drag-and-drop calendar with AI-powered auto-assignment. Matches technicians by skill, location, and availability. No more double-bookings.', color: 'bg-cyan-500/10' },
+  { icon: '\ud83d\uddfa\ufe0f', title: 'Route Optimization', desc: 'Real turn-by-turn routing with multi-stop optimization. Traffic-aware ETAs. Your crew saves hours and fuel every week.', color: 'bg-green-500/10' },
+  { icon: '\ud83d\udcb0', title: 'Invoicing & Payments', desc: 'Auto-generate invoices from completed jobs. Accept cards, ACH, Apple Pay, Google Pay. Clients pay online in your branded portal.', color: 'bg-yellow-500/10' },
+  { icon: '\ud83d\udc65', title: 'Client CRM', desc: 'Full client profiles with service history, lifetime value, communication log, and satisfaction scores. Know every customer like your best one.', color: 'bg-red-500/10' },
+  { icon: '\ud83d\udcf1', title: 'Offline-First Mobile', desc: "Your crew works everywhere \u2014 even without signal. Full job details, forms, and photos cached offline. Auto-syncs when connectivity returns.", color: 'bg-orange-500/10' },
+  { icon: '\ud83d\udcac', title: 'Two-Way SMS', desc: 'Text clients and crew from one dashboard. Automated appointment reminders, on-my-way alerts, and follow-ups \u2014 included in every plan.', color: 'bg-blue-500/10' },
+  { icon: '\ud83d\udcca', title: 'Real Analytics', desc: "Not basic pie charts. Custom dashboards, revenue trends, technician scorecards, job profitability \u2014 the insights your business actually needs.", color: 'bg-violet-500/10' },
+  { icon: '\ud83c\udf10', title: 'Client Portal', desc: 'A branded self-serve portal where your customers approve quotes, track their technician in real-time, pay invoices, and book services 24/7.', color: 'bg-teal-500/10' },
 ]
 
 const aiFeatures = [
-  { icon: '🧠', title: 'Smart Dispatch', desc: 'Auto-assigns the right technician to every job based on skills, proximity, current workload, and customer preference.' },
-  { icon: '⚡', title: 'Predictive Estimates', desc: 'Upload a job photo and get an AI-generated quote based on your pricing history, materials database, and job complexity.' },
-  { icon: '📈', title: 'Revenue Intelligence', desc: 'Ask questions in plain English \u2014 "What\'s my most profitable service?" "Which tech has the best close rate?" Instant answers.' },
-  { icon: '🔄', title: 'Auto Follow-Up', desc: 'AI detects when estimates go cold and triggers personalized follow-up sequences via SMS, email, and push notifications.' },
+  { icon: '\ud83e\udde0', title: 'Smart Dispatch', desc: 'Auto-assigns the right technician to every job based on skills, proximity, current workload, and customer preference.' },
+  { icon: '\u26a1', title: 'Predictive Estimates', desc: 'Upload a job photo and get an AI-generated quote based on your pricing history, materials database, and job complexity.' },
+  { icon: '\ud83d\udcc8', title: 'Revenue Intelligence', desc: 'Ask questions in plain English \u2014 "What\'s my most profitable service?" "Which tech has the best close rate?" Instant answers.' },
+  { icon: '\ud83d\udd04', title: 'Auto Follow-Up', desc: 'AI detects when estimates go cold and triggers personalized follow-up sequences via SMS, email, and push notifications.' },
 ]
 
 const stats = [
@@ -80,7 +81,7 @@ export default function Home() {
           </p>
 
           <div className="flex justify-center gap-4 flex-wrap mb-10">
-            <ButtonPrimary size="lg">Start Free \u2014 No Card Required \u2192</ButtonPrimary>
+            <ButtonPrimary size="lg" href={appRoutes.signup}>Start Free \u2014 No Card Required \u2192</ButtonPrimary>
             <ButtonOutline size="lg" to="/features">See How It Works</ButtonOutline>
           </div>
 
