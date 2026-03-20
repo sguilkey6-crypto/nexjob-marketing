@@ -5,20 +5,16 @@ const footerLinks = {
     { label: 'Features', path: '/features' },
     { label: 'Pricing', path: '/pricing' },
     { label: 'Industries', path: '/industries' },
-    { label: 'Integrations', path: '#' },
-    { label: 'Mobile App', path: '#' },
+    { label: 'Changelog', path: '/changelog' },
   ],
   Resources: [
-    { label: 'Blog', path: '#' },
+    { label: 'FAQ', path: '/faq' },
     { label: 'Help Center', path: '#' },
-    { label: 'API Docs', path: '#' },
     { label: 'Status Page', path: '#' },
-    { label: 'Changelog', path: '#' },
   ],
   Company: [
     { label: 'About', path: '/about' },
-    { label: 'Careers', path: '#' },
-    { label: 'Contact', path: '/about' },
+    { label: 'Contact', href: 'mailto:steve@nexjob.app' },
     { label: 'Privacy Policy', path: '#' },
     { label: 'Terms of Service', path: '#' },
   ],
@@ -38,6 +34,12 @@ export default function Footer() {
             <p className="text-sm text-nx-muted mt-3 max-w-[280px] leading-relaxed">
               AI-powered field service management for trade professionals. Schedule, dispatch, invoice, and grow — all from one platform.
             </p>
+            <a
+              href="mailto:steve@nexjob.app"
+              className="inline-block mt-4 text-xs text-nx-muted2 hover:text-nx-text transition-colors"
+            >
+              steve@nexjob.app
+            </a>
           </div>
 
           {/* Link Columns */}
@@ -47,14 +49,23 @@ export default function Footer() {
                 {heading}
               </h4>
               <ul className="space-y-2">
-                {links.map(({ label, path }) => (
+                {links.map(({ label, path, href }) => (
                   <li key={label}>
-                    <Link
-                      to={path}
-                      className="text-sm text-nx-muted2 hover:text-nx-text transition-colors"
-                    >
-                      {label}
-                    </Link>
+                    {href ? (
+                      <a
+                        href={href}
+                        className="text-sm text-nx-muted2 hover:text-nx-text transition-colors"
+                      >
+                        {label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={path}
+                        className="text-sm text-nx-muted2 hover:text-nx-text transition-colors"
+                      >
+                        {label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -63,7 +74,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-nx-border pt-6 flex flex-col sm:flex-row justify-between items-center gap-2">
-          <p className="text-xs text-nx-muted2">© 2026 NexJob. All rights reserved.</p>
+          <p className="text-xs text-nx-muted2">© 2026 NexJob, LLC — Delaware County, Ohio. All rights reserved.</p>
           <p className="text-xs text-nx-muted2">Made with 🤖 + ☕ for trade pros everywhere</p>
         </div>
       </div>

@@ -4,58 +4,64 @@ import CTASection from '../components/CTASection'
 
 const industries = [
   {
-    icon: '\u2744\ufe0f',
+    icon: '❄️',
     name: 'HVAC',
     desc: 'Manage installs, maintenance contracts, and emergency repairs. Track equipment models, warranty dates, and refrigerant usage per unit.',
     tags: ['Equipment Tracking', 'Maintenance Contracts', 'Emergency Dispatch'],
   },
   {
-    icon: '\ud83d\udd27',
+    icon: '🔧',
     name: 'Plumbing',
     desc: 'Quote water heater replacements, schedule drain cleanings, and manage recurring maintenance. Photo documentation for every job.',
     tags: ['Photo Markup', 'Parts Inventory', 'Recurring Jobs'],
   },
   {
-    icon: '\u26a1',
+    icon: '⚡',
     name: 'Electrical',
     desc: 'Track permits, manage panel upgrades, and schedule inspections. Certification tracking for your licensed electricians.',
     tags: ['Permit Tracking', 'Certifications', 'Inspection Scheduling'],
   },
   {
-    icon: '\ud83c\udf3f',
+    icon: '🌿',
     name: 'Landscaping',
     desc: 'Manage weekly mowing routes, seasonal cleanups, and hardscape projects. Recurring schedule templates save hours every week.',
     tags: ['Route Optimization', 'Recurring Schedules', 'Seasonal Templates'],
   },
   {
-    icon: '\ud83e\uddf9',
+    icon: '🧹',
     name: 'Cleaning',
     desc: 'Book residential and commercial cleanings with custom checklists. Manage supplies, team assignments, and client preferences.',
     tags: ['Custom Checklists', 'Client Preferences', 'Supply Tracking'],
   },
   {
-    icon: '\ud83d\udd28',
+    icon: '🔨',
     name: 'Handyman',
     desc: 'From honey-do lists to full remodels. Multi-service quoting, time tracking, and a client portal that makes solo operators look big.',
     tags: ['Multi-Service Quotes', 'Time Tracking', 'Before/After Photos'],
   },
   {
-    icon: '\ud83c\udfd7\ufe0f',
+    icon: '🏗️',
     name: 'Roofing',
     desc: 'Estimate from aerial measurements, manage materials, and schedule crews. Insurance claim documentation built right in.',
     tags: ['Aerial Estimates', 'Material Tracking', 'Insurance Docs'],
   },
   {
-    icon: '\ud83c\udfa8',
+    icon: '🎨',
     name: 'Painting',
     desc: 'Room-by-room quoting, color tracking, and crew scheduling. Calculate paint coverage automatically from measurements.',
     tags: ['Room-by-Room Quotes', 'Coverage Calculator', 'Color Tracking'],
   },
   {
-    icon: '\ud83d\udc1b',
+    icon: '🐛',
     name: 'Pest Control',
     desc: 'Schedule treatments, track chemical usage, manage service contracts, and generate compliance reports automatically.',
     tags: ['Chemical Tracking', 'Compliance Reports', 'Service Contracts'],
+  },
+  {
+    icon: '🚐',
+    name: 'RV Technicians',
+    desc: 'Manage mobile RV repairs, slide-out servicing, and generator maintenance. Track VINs, chassis types, and warranty service history per unit.',
+    tags: ['VIN Tracking', 'Mobile Repairs', 'Warranty Service'],
   },
 ]
 
@@ -71,7 +77,7 @@ export default function Industries() {
             <span className="text-nx-purple-light">Tuned for your workflow.</span>
           </h1>
           <p className="text-lg text-nx-muted max-w-xl mx-auto leading-relaxed">
-            NexJob works for every home and commercial service business \u2014 with industry-specific templates, checklists, and pricing built in.
+            NexJob works for every home and commercial service business — with industry-specific templates, checklists, and pricing built in.
           </p>
         </div>
       </section>
@@ -101,7 +107,6 @@ export default function Industries() {
         </div>
       </section>
 
-      {/* CTA */}
       <CTASection
         title="Don't see your trade?"
         subtitle="NexJob is flexible enough for any service business. Start your free trial and customize it for your workflow."

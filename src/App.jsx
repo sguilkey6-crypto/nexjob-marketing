@@ -6,6 +6,8 @@ import Features from './pages/Features'
 import Pricing from './pages/Pricing'
 import Industries from './pages/Industries'
 import About from './pages/About'
+import FAQ from './pages/FAQ'
+import Changelog from './pages/Changelog'
 import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
@@ -19,6 +21,8 @@ export default function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/about" element={<About />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/changelog" element={<Changelog />} />
       </Routes>
       <Footer />
     </div>
