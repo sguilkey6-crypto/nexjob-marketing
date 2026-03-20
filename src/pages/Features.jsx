@@ -3,7 +3,7 @@ import SectionLabel from '../components/SectionLabel'
 import FadeIn from '../components/FadeIn'
 import CTASection from '../components/CTASection'
 
-// ── 3 Hero showcase features (alternating layout + visual) ──────────────────
+// ── 4 Hero showcase features (alternating layout + visual) ──────────────────
 const showcaseFeatures = [
   {
     number: '01',
@@ -35,6 +35,20 @@ const showcaseFeatures = [
     reverse: true,
   },
   {
+    number: '04',
+    label: 'Voice AI',
+    title: 'Voice-to-Invoice',
+    tagline: '"Techs talk. Invoices write themselves."',
+    desc: 'Your tech records a 30-second voice note after finishing the job — describing what was done, what parts were used, and how long it took. NexJob transcribes it, extracts every line item, and builds a complete invoice ready to send.',
+    points: [
+      { bold: 'Hands-free capture', text: '— record from the truck before leaving the job site' },
+      { bold: 'Full transcription', text: '— AI extracts parts, labor hours, and descriptions automatically' },
+      { bold: 'Review before sending', text: '— you approve or edit before the invoice goes to the client' },
+      { bold: 'Works offline', text: '— records locally and syncs when connection is restored' },
+    ],
+    visual: 'voice',
+  },
+  {
     number: '06',
     label: 'Payments',
     title: 'Text-to-Pay',
@@ -47,6 +61,7 @@ const showcaseFeatures = [
       { bold: 'Cuts collection time', text: '— customers pay the same day instead of waiting weeks' },
     ],
     visual: 'payment',
+    reverse: true,
   },
 ]
 
@@ -181,6 +196,42 @@ function VisionVisual() {
   )
 }
 
+function VoiceVisual() {
+  return (
+    <div className="bg-nx-bg rounded-xl p-5 border border-nx-border space-y-3">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-sm font-bold">Job #4821 — Voice Note</span>
+        <span className="text-[10px] text-red-400 bg-red-500/10 px-2 py-0.5 rounded font-semibold animate-pulse">● REC 0:28</span>
+      </div>
+      <div className="bg-nx-surface2 border border-nx-border rounded-lg p-3">
+        <p className="text-[10px] text-nx-muted uppercase tracking-wide font-semibold mb-2">Transcribed</p>
+        <p className="text-xs text-nx-muted italic leading-relaxed">
+          "Replaced the pressure relief valve, 45 minutes labor. Used one Watts 3/4-inch valve from stock. Also tightened the supply line — no extra charge for that."
+        </p>
+      </div>
+      <div className="bg-green-500/8 border border-green-500/20 rounded-lg p-3">
+        <p className="text-[10px] text-nx-green font-semibold uppercase tracking-wide mb-2">AI Invoice Draft</p>
+        <div className="space-y-1.5">
+          {[
+            ['Watts 3/4" Pressure Relief Valve', '$68'],
+            ['Labor — Valve Replacement (0.75 hr)', '$112'],
+          ].map(([item, price]) => (
+            <div key={item} className="flex justify-between text-xs">
+              <span className="text-nx-muted flex-1">{item}</span>
+              <span className="text-nx-text">{price}</span>
+            </div>
+          ))}
+          <div className="flex justify-between text-sm font-bold pt-2 border-t border-green-500/20 mt-1">
+            <span>Total</span>
+            <span className="text-nx-green">$180</span>
+          </div>
+        </div>
+      </div>
+      <p className="text-[10px] text-nx-muted2">→ Ready for your review. Tap to send or edit.</p>
+    </div>
+  )
+}
+
 function PaymentVisual() {
   return (
     <div className="bg-nx-bg rounded-xl p-5 border border-nx-border">
@@ -204,7 +255,7 @@ function PaymentVisual() {
   )
 }
 
-const visuals = { quote: QuoteVisual, vision: VisionVisual, payment: PaymentVisual }
+const visuals = { quote: QuoteVisual, vision: VisionVisual, voice: VoiceVisual, payment: PaymentVisual }
 
 export default function Features() {
   return (
@@ -224,7 +275,7 @@ export default function Features() {
         </div>
       </section>
 
-      {/* 3 Hero Showcase Sections */}
+      {/* 4 Hero Showcase Sections */}
       {showcaseFeatures.map((section) => {
         const Visual = visuals[section.visual]
         return (
