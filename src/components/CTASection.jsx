@@ -1,4 +1,4 @@
-import { ButtonPrimary } from './Button'
+import { ButtonPrimary, ButtonOutline } from './Button'
 import { appRoutes } from '../config'
 
 export default function CTASection({
@@ -7,6 +7,7 @@ export default function CTASection({
   buttonText = 'Start Free Trial',
   buttonTo,
   buttonHref,
+  showDemo = true,
 }) {
   // Default: link to Rails app signup if no explicit destination
   const resolvedHref = buttonHref || (!buttonTo ? appRoutes.trial : undefined)
@@ -23,10 +24,15 @@ export default function CTASection({
           <p className="text-nx-muted text-lg max-w-lg mx-auto mb-8 relative z-10">
             {subtitle}
           </p>
-          <div className="relative z-10">
+          <div className="relative z-10 flex justify-center gap-4 flex-wrap">
             <ButtonPrimary size="lg" to={buttonTo} href={resolvedHref}>
-              {buttonText} <span>\u2192</span>
+              {buttonText} <span>&rarr;</span>
             </ButtonPrimary>
+            {showDemo && (
+              <ButtonOutline size="lg" href="https://calendly.com/nexjob/demo">
+                Book a Demo
+              </ButtonOutline>
+            )}
           </div>
         </div>
       </div>

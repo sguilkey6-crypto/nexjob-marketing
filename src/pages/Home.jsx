@@ -6,13 +6,29 @@ import CTASection from '../components/CTASection'
 import { appRoutes } from '../config'
 
 const heroProofs = [
-  'Free forever plan',
-  'Offline-ready mobile app',
-  'AI-powered scheduling',
+  '60+ features included',
+  'AI at every tier',
   'Set up in under 5 minutes',
+  'No credit card required',
+]
+
+const heroStats = [
+  { num: '60+', label: 'Features' },
+  { num: '$0', label: 'Setup fee' },
+  { num: '14 days', label: 'Free trial' },
+  { num: '20+', label: 'AI Agents Built In' },
 ]
 
 const trades = ['\u2744\ufe0f HVAC', '\ud83d\udd28 Handyman', '\u26a1 Electrical', '\ud83d\udebf Plumbing', '\ud83c\udf3f Landscaping', '\ud83e\uddf9 Cleaning', '\ud83c\udfd7\ufe0f Roofing', '\ud83c\udfa8 Painting']
+
+const integrations = [
+  { name: 'QuickBooks', icon: '📗' },
+  { name: 'Stripe', icon: '💳' },
+  { name: 'Google Calendar', icon: '📅' },
+  { name: 'Twilio', icon: '📱' },
+  { name: 'Zapier', icon: '⚡' },
+  { name: 'Gmail', icon: '📧' },
+]
 
 const features = [
   { icon: '\ud83d\udccb', title: 'Smart Quoting', desc: 'Create professional quotes in seconds. AI suggests pricing based on job type, materials, and your history. Clients approve with one tap.', color: 'bg-purple-500/10' },
@@ -68,7 +84,7 @@ export default function Home() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-nx-purple-light bg-purple-500/10 border border-purple-500/20 px-4 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-nx-green rounded-full animate-pulse-dot" />
-            Now in Early Access
+            20+ AI Agents Included at Every Tier
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-6">
@@ -77,12 +93,24 @@ export default function Home() {
           </h1>
 
           <p className="text-lg text-nx-muted max-w-xl mx-auto mb-10 leading-relaxed">
-            AI-powered scheduling, dispatching, invoicing, and client management \u2014 built for trade pros who want to grow without the growing pains.
+            AI-powered scheduling, dispatching, invoicing, and client management &mdash; built for trade pros who want to grow without the growing pains. Starting at $29/mo.
           </p>
 
-          <div className="flex justify-center gap-4 flex-wrap mb-10">
-            <ButtonPrimary size="lg" href={appRoutes.signup}>Start Free \u2014 No Card Required \u2192</ButtonPrimary>
-            <ButtonOutline size="lg" to="/features">See How It Works</ButtonOutline>
+          <div className="flex justify-center gap-4 flex-wrap mb-8">
+            <ButtonPrimary size="lg" href={appRoutes.signup}>Start Free &mdash; 14 Days &rarr;</ButtonPrimary>
+            <ButtonOutline size="lg" href="https://calendly.com/nexjob/demo">Book a Demo</ButtonOutline>
+          </div>
+
+          <p className="text-xs text-nx-muted2 mb-8">No credit card &middot; All features unlocked &middot; Cancel anytime</p>
+
+          {/* Inline Stats */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-xl mx-auto mb-8">
+            {heroStats.map((s) => (
+              <div key={s.label} className="text-center">
+                <div className="text-2xl font-extrabold tracking-tight gradient-text-static">{s.num}</div>
+                <div className="text-xs text-nx-muted mt-0.5">{s.label}</div>
+              </div>
+            ))}
           </div>
 
           <div className="flex justify-center flex-wrap gap-x-6 gap-y-2">
@@ -96,11 +124,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== LOGO/TRADE BAR ===== */}
-      <section className="border-y border-nx-border py-12">
+      {/* ===== INTEGRATION BAR ===== */}
+      <section className="border-y border-nx-border py-10">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-xs font-medium text-nx-muted2 uppercase tracking-widest mb-6">
-            Trusted by service businesses across every trade
+          <p className="text-center text-xs font-medium text-nx-muted2 uppercase tracking-widest mb-5">
+            Works with your existing tools
+          </p>
+          <div className="flex justify-center items-center flex-wrap gap-8">
+            {integrations.map((i) => (
+              <div key={i.name} className="flex items-center gap-2 text-sm font-semibold text-nx-muted">
+                <span className="text-lg">{i.icon}</span>
+                {i.name}
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs font-medium text-nx-muted2 uppercase tracking-widest mt-8 mb-4">
+            Built for every trade
           </p>
           <div className="flex justify-center items-center flex-wrap gap-8 opacity-50">
             {trades.map((t) => (
