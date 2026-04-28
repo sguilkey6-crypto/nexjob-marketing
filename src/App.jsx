@@ -9,6 +9,7 @@ import About from './pages/About'
 import FAQ from './pages/FAQ'
 import Changelog from './pages/Changelog'
 import ScrollToTop from './components/ScrollToTop'
+import CookieConsent from './components/CookieConsent'
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/changelog" element={<Changelog />} />
       </Routes>
       <Footer />
+      <CookieConsent />
     </div>
   )
 }

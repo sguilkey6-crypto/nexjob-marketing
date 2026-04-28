@@ -6,23 +6,24 @@ import { appRoutes } from '../config'
 
 const plans = [
   {
-    name: 'Starter',
+    name: 'Solo',
     monthly: 0,
     annual: 0,
     period: 'Free forever \u00b7 1 user',
     cta: 'Get Started Free',
     ctaStyle: 'outline',
-    href: `${appRoutes.signup}?plan=starter`,
+    href: `${appRoutes.signup}?plan=solo`,
     features: [
-      'Basic quoting & invoicing',
-      'Up to 5 active jobs',
-      'Client portal',
-      'Offline mode',
+      'Jobs, invoices & scheduling',
+      'Customer portal',
+      'SMS notifications',
+      'Online booking widget',
+      'AI Quote Advisor',
       'Email support',
     ],
   },
   {
-    name: 'Pro',
+    name: 'Crew',
     monthly: 49,
     annual: 39,
     period: 'Up to 5 users \u00b7 +$15/user after',
@@ -32,51 +33,51 @@ const plans = [
     badge: 'Most Popular',
     href: `${appRoutes.trial}`,
     features: [
-      'Unlimited jobs & invoices',
-      'AI scheduling & dispatch',
-      'GPS tracking',
-      'Two-way SMS',
-      'Custom email domain',
+      'Everything in Solo',
+      'Quotes & leads pipeline',
+      'Recurring jobs',
+      'Time tracking & GPS clock-in',
       'QuickBooks sync',
+      'Two-way SMS',
       'Automated reminders',
-      'Offline mode',
       'Priority email + chat support',
     ],
   },
   {
-    name: 'Business',
+    name: 'Ops',
     monthly: 129,
     annual: 99,
     period: 'Up to 15 users \u00b7 +$15/user after',
     cta: 'Start Free Trial',
     ctaStyle: 'primary',
-    href: `${appRoutes.signup}?plan=business&trial=true`,
+    href: `${appRoutes.signup}?plan=ops&trial=true`,
     features: [
-      'Everything in Pro',
-      'AI route optimization',
-      'Job costing & profitability',
-      'Advanced analytics dashboards',
-      'Inventory management',
+      'Everything in Crew',
+      'Inventory & purchase orders',
+      'Equipment tracking',
+      'AI agents & CFO briefing',
+      'Dispatch board & live map',
       'Expense tracking',
-      'White-label client portal',
+      'Email campaigns',
       'Phone + chat support',
     ],
   },
   {
-    name: 'Enterprise',
+    name: 'Scale',
     monthly: 299,
     annual: 249,
     period: 'Unlimited users \u00b7 flat rate',
-    cta: 'Contact Sales',
+    cta: 'Start Free Trial',
     ctaStyle: 'outline',
-    href: '/about',
-    isInternal: true,
+    href: `${appRoutes.signup}?plan=scale&trial=true`,
     features: [
-      'Everything in Business',
-      'Full AI suite (predictions, NLP)',
-      'Custom workflows & automations',
-      'Multi-location support',
-      'Dedicated success manager',
+      'Everything in Ops',
+      'Offline mode',
+      'Webhooks & API access',
+      'SMS-to-booking AI',
+      'Stripe Connect payments',
+      'Full fleet dispatch',
+      'Client services AI agent',
     ],
   },
 ]
@@ -91,8 +92,10 @@ const comparisonRows = [
   { feature: 'Offline Mode', jobber: '\u2717 Not available', nexjob: '\u2713 Included', nexjobWin: true, jobberNo: true },
   { feature: 'AI Scheduling', jobber: '\u2717 Basic Copilot only', nexjob: '\u2713 Full AI dispatch', nexjobWin: true, jobberNo: true },
   { feature: 'Route Optimization', jobber: '\u2717 "Connect the dots" map', nexjob: '\u2713 Real routing', nexjobWin: true, jobberNo: true },
-  { feature: 'Advanced Analytics', jobber: 'Plus plan ($599)', nexjob: 'Business plan ($129)', nexjobWin: true, jobberPartial: true },
-  { feature: 'Job Costing', jobber: 'Grow plan ($199)', nexjob: 'Business plan ($129)', nexjobWin: false, jobberPartial: true },
+  { feature: 'Geofencing', jobber: '\u2717 Not available', nexjob: '\u2713 Ops plan ($129)', nexjobWin: true, jobberNo: true },
+  { feature: 'Batch Invoicing', jobber: 'Grow plan ($199)', nexjob: '\u2713 Crew plan ($49)', nexjobWin: true, jobberPartial: true },
+  { feature: 'Advanced Analytics', jobber: 'Plus plan ($599)', nexjob: 'Ops plan ($129)', nexjobWin: true, jobberPartial: true },
+  { feature: 'Job Costing', jobber: 'Grow plan ($199)', nexjob: 'Ops plan ($129)', nexjobWin: false, jobberPartial: true },
   { feature: 'Free Tier', jobber: '\u2717 None', nexjob: '\u2713 Free forever', nexjobWin: true, jobberNo: true },
 ]
 
@@ -218,7 +221,7 @@ export default function Pricing() {
                 <tr className="border-b border-nx-border">
                   <th className="text-left text-xs font-semibold text-nx-muted uppercase tracking-wider py-3 px-4">Feature</th>
                   <th className="text-left text-xs font-semibold text-nx-muted uppercase tracking-wider py-3 px-4">Jobber ($119\u2013$199/mo)</th>
-                  <th className="text-left text-xs font-semibold text-nx-purple-light uppercase tracking-wider py-3 px-4 bg-purple-500/5">NexJob Pro ($49/mo)</th>
+                  <th className="text-left text-xs font-semibold text-nx-purple-light uppercase tracking-wider py-3 px-4 bg-purple-500/5">NexJob Crew ($49/mo)</th>
                 </tr>
               </thead>
               <tbody>

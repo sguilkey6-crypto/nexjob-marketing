@@ -35,11 +35,11 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <SectionLabel>About</SectionLabel>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-4">
-            Built by a trade pro.<br />
-            <span className="text-nx-purple-light">For trade pros.</span>
+            Built alongside the trades.<br />
+            <span className="text-nx-purple-light">For the trades.</span>
           </h1>
           <p className="text-lg text-nx-muted max-w-xl mx-auto leading-relaxed">
-            NexJob was born from frustration with software that doesn't understand how field service actually works.
+            NexJob was built by someone who's worked closely with trade professionals for years and saw firsthand how badly they needed better, more affordable software.
           </p>
         </div>
       </section>
@@ -55,7 +55,7 @@ export default function About() {
                 Every field service platform promises to "simplify your business." But when you're knee-deep in a crawl space with no cell signal, or your dispatcher just double-booked your best tech, or 60% of your estimates are landing in spam folders — "simple" feels like a lie.
               </p>
               <p>
-                NexJob is different because it was built by someone who's lived the problem. We know that offline access isn't a "nice-to-have" — it's a requirement. That route optimization isn't a luxury — it's money in your pocket. That AI scheduling isn't the future — it's overdue.
+                NexJob is different because it was built by someone who's been in the trenches with trade pros — seeing the gaps, hearing the complaints, and understanding what actually matters on a job site. We know that offline access isn't a "nice-to-have" — it's a requirement. That route optimization isn't a luxury — it's money in your pocket. That AI scheduling isn't the future — it's overdue.
               </p>
               <p>
                 We're building the platform we wished existed: powerful enough for a 50-person operation, simple enough for a solo handyman, and priced fairly for everyone in between.

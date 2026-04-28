@@ -6,14 +6,14 @@ import CTASection from '../components/CTASection'
 import { appRoutes } from '../config'
 
 const heroProofs = [
-  '60+ features included',
+  '75+ features included',
   'AI at every tier',
   'Set up in under 5 minutes',
   'No credit card required',
 ]
 
 const heroStats = [
-  { num: '60+', label: 'Features' },
+  { num: '75+', label: 'Features' },
   { num: '$0', label: 'Setup fee' },
   { num: '14 days', label: 'Free trial' },
   { num: '20+', label: 'AI Agents Built In' },
@@ -34,19 +34,25 @@ const features = [
   { icon: '\ud83d\udccb', title: 'Smart Quoting', desc: 'Create professional quotes in seconds. AI suggests pricing based on job type, materials, and your history. Clients approve with one tap.', color: 'bg-purple-500/10' },
   { icon: '\ud83d\udcc5', title: 'AI Scheduling', desc: 'Drag-and-drop calendar with AI-powered auto-assignment. Matches technicians by skill, location, and availability. No more double-bookings.', color: 'bg-cyan-500/10' },
   { icon: '\ud83d\uddfa\ufe0f', title: 'Route Optimization', desc: 'Real turn-by-turn routing with multi-stop optimization. Traffic-aware ETAs. Your crew saves hours and fuel every week.', color: 'bg-green-500/10' },
-  { icon: '\ud83d\udcb0', title: 'Invoicing & Payments', desc: 'Auto-generate invoices from completed jobs. Accept cards, ACH, Apple Pay, Google Pay. Clients pay online in your branded portal.', color: 'bg-yellow-500/10' },
+  { icon: '\ud83d\udcb0', title: 'Invoicing & Payments', desc: 'Progress invoicing, batch invoicing, deposit tracking, and Tap to Pay. Accept cards, ACH, Apple Pay, Google Pay via Stripe.', color: 'bg-yellow-500/10' },
   { icon: '\ud83d\udc65', title: 'Client CRM', desc: 'Full client profiles with service history, lifetime value, communication log, and satisfaction scores. Know every customer like your best one.', color: 'bg-red-500/10' },
-  { icon: '\ud83d\udcf1', title: 'Offline-First Mobile', desc: "Your crew works everywhere \u2014 even without signal. Full job details, forms, and photos cached offline. Auto-syncs when connectivity returns.", color: 'bg-orange-500/10' },
+  { icon: '\ud83d\udcf1', title: 'Offline Mode + Sync', desc: "Your crew works everywhere \u2014 even without signal. IndexedDB caching, mutation queue, and automatic background sync when connectivity returns.", color: 'bg-orange-500/10' },
   { icon: '\ud83d\udcac', title: 'Two-Way SMS', desc: 'Text clients and crew from one dashboard. Automated appointment reminders, on-my-way alerts, and follow-ups \u2014 included in every plan.', color: 'bg-blue-500/10' },
   { icon: '\ud83d\udcca', title: 'Real Analytics', desc: "Not basic pie charts. Custom dashboards, revenue trends, technician scorecards, job profitability \u2014 the insights your business actually needs.", color: 'bg-violet-500/10' },
   { icon: '\ud83c\udf10', title: 'Client Portal', desc: 'A branded self-serve portal where your customers approve quotes, track their technician in real-time, pay invoices, and book services 24/7.', color: 'bg-teal-500/10' },
+  { icon: '\ud83d\udcc6', title: 'Calendar Sync', desc: 'Two-way sync with Google Calendar and Microsoft 365. Schedule or update a job and the calendar event updates automatically.', color: 'bg-indigo-500/10' },
+  { icon: '\ud83d\udce8', title: 'Email Campaigns', desc: 'Send targeted SMS and email campaigns to your customer base. Built-in templates, batch messaging, and delivery tracking.', color: 'bg-pink-500/10' },
+  { icon: '\ud83d\udd04', title: 'Recurring Jobs & Invoices', desc: 'Set up maintenance contracts and recurring services. Invoices generate and send automatically on schedule.', color: 'bg-emerald-500/10' },
+  { icon: '\ud83d\udccd', title: 'Geofencing', desc: 'Auto clock-in when techs arrive on site. Monitor arrivals, departures, and violations. Per-job radius controls with manager alerts.', color: 'bg-rose-500/10' },
+  { icon: '\ud83c\udfa4', title: 'Voice-to-Invoice', desc: 'Techs record a voice note after a job. AI transcribes it and extracts line items into a ready-to-send invoice draft.', color: 'bg-amber-500/10' },
+  { icon: '\ud83d\udce5', title: 'Competitor Import', desc: 'Migrating from Jobber or HousecallPro? Import your customers, jobs, and history automatically with platform auto-detection.', color: 'bg-sky-500/10' },
 ]
 
 const aiFeatures = [
-  { icon: '\ud83e\udde0', title: 'Smart Dispatch', desc: 'Auto-assigns the right technician to every job based on skills, proximity, current workload, and customer preference.' },
-  { icon: '\u26a1', title: 'Predictive Estimates', desc: 'Upload a job photo and get an AI-generated quote based on your pricing history, materials database, and job complexity.' },
-  { icon: '\ud83d\udcc8', title: 'Revenue Intelligence', desc: 'Ask questions in plain English \u2014 "What\'s my most profitable service?" "Which tech has the best close rate?" Instant answers.' },
-  { icon: '\ud83d\udd04', title: 'Auto Follow-Up', desc: 'AI detects when estimates go cold and triggers personalized follow-up sequences via SMS, email, and push notifications.' },
+  { icon: '\ud83e\udde0', title: 'Ghost Dispatching', desc: 'Auto-assigns the right technician to every job based on proximity and workload. Runs every 5 minutes \u2014 no dispatcher needed.' },
+  { icon: '\u26a1', title: 'Vision Estimating', desc: 'Upload a job photo and get an AI-generated quote. Gemini Vision analyzes the image and drafts a priced line-item estimate.' },
+  { icon: '\ud83d\udcc8', title: 'Virtual CFO Briefing', desc: 'A daily AI-generated financial summary lands in your inbox every morning: revenue, outstanding invoices, cash flow, and new leads.' },
+  { icon: '\ud83d\udd04', title: 'Auto Follow-Up', desc: 'AI detects when quotes go cold and triggers personalized follow-up sequences. Invoice dunning runs automatically too.' },
 ]
 
 const stats = [
@@ -58,16 +64,16 @@ const stats = [
 
 const testimonials = [
   {
-    text: '"We switched from Jobber and saved $200/month. The AI scheduling alone paid for itself \u2014 my team runs 2 more jobs per day now."',
-    initials: 'JR', name: 'Jake Rodriguez', role: 'Owner, ProFlow Plumbing \u00b7 8 employees',
+    text: '"Before NexJob, I was running my HVAC business off a clipboard and three group chats. Now my techs get dispatched automatically, customers pay from a text before I even get back to the truck, and I actually know which jobs are making me money."',
+    initials: 'T', name: 'Todd', role: 'Owner, TLT HVAC \u00b7 Ohio',
   },
   {
-    text: '"The offline mode is a game-changer. My guys work in basements and rural areas all day. With our old software, they were flying blind."',
-    initials: 'TM', name: 'Tanya Mitchell', role: 'GM, Summit HVAC \u00b7 12 employees',
+    text: '"We switched from Jobber to NexJob and saved over two grand a year \u2014 but honestly the AI is what sold me. I can take a photo of a roof, get a quote drafted in seconds, and send it to the homeowner before I\'m off the ladder."',
+    initials: 'N', name: 'Nick', role: 'Owner, CRCS Roofing \u00b7 Florida',
   },
   {
-    text: '"I was paying $29/user on another platform. NexJob gives me more features for less. The client portal makes my one-man show look like a big operation."',
-    initials: 'DK', name: 'Derek Kim', role: 'Solo handyman \u00b7 1 employee',
+    text: '"I\'m a one-man shop and NexJob makes me look like I have an office staff. The AI answers my texts after hours, books jobs onto my calendar, and sends invoices with a pay link the second I mark the job done."',
+    initials: 'D', name: 'Dan', role: 'Owner, Pipe Dreams Plumbing \u00b7 Kentucky',
   },
 ]
 
@@ -98,7 +104,7 @@ export default function Home() {
 
           <div className="flex justify-center gap-4 flex-wrap mb-8">
             <ButtonPrimary size="lg" href={appRoutes.signup}>Start Free &mdash; 14 Days &rarr;</ButtonPrimary>
-            <ButtonOutline size="lg" href="https://calendly.com/nexjob/demo">Book a Demo</ButtonOutline>
+            <ButtonOutline size="lg" href="https://cal.com/steve-guilkey-9ooniv/15min">Book a Demo</ButtonOutline>
           </div>
 
           <p className="text-xs text-nx-muted2 mb-8">No credit card &middot; All features unlocked &middot; Cancel anytime</p>

@@ -29,7 +29,7 @@ export default function CTASection({
               {buttonText} <span>&rarr;</span>
             </ButtonPrimary>
             {showDemo && (
-              <ButtonOutline size="lg" href="https://calendly.com/nexjob/demo">
+              <ButtonOutline size="lg" href="https://cal.com/steve-guilkey-9ooniv/15min">
                 Book a Demo
               </ButtonOutline>
             )}

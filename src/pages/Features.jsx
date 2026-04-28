@@ -111,9 +111,9 @@ const allFeatures = [
   },
   {
     number: '08', icon: '📦',
-    title: 'Predictive Inventory',
+    title: 'Inventory & Stock Alerts',
     tagline: 'Never show up missing a part again.',
-    desc: 'Scans your upcoming schedule, flags parts running low, auto-drafts purchase orders to suppliers.',
+    desc: 'Track your parts inventory with low-stock alerts. When a job is booked, the system flags items running low so you can reorder in time.',
   },
   {
     number: '09', icon: '🔗',
