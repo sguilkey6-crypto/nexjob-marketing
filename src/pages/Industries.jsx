@@ -42,8 +42,8 @@ const industries = [
   {
     icon: '🏗️',
     name: 'Roofing',
-    desc: 'Estimate from aerial measurements, manage materials, and schedule crews. Insurance claim documentation built right in.',
-    tags: ['Aerial Estimates', 'Material Tracking', 'Insurance Docs'],
+    desc: 'Estimate from instant satellite roof measurements with a configurable waste factor, then order materials only after an on-site field check. Offer homeowners financing right on the proposal, with insurance claim documentation built in.',
+    tags: ['Satellite Measurements', 'Field-Verified Ordering', 'Proposal Financing'],
   },
   {
     icon: '🎨',
