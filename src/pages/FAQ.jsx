@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: 'How do I get support?',
-    a: 'Email us at steve@nexjob.app. We typically respond within a few hours during business hours. Enterprise plan customers get priority support.',
+    a: 'Email us at support@nex-job.com. We typically respond within a few hours during business hours. Pro plan customers get priority phone support.',
   },
 ]
 

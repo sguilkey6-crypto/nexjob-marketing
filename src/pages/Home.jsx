@@ -99,7 +99,7 @@ export default function Home() {
           </h1>
 
           <p className="text-lg text-nx-muted max-w-xl mx-auto mb-10 leading-relaxed">
-            AI-powered scheduling, dispatching, invoicing, and client management &mdash; built for trade pros who want to grow without the growing pains. Starting at $29/mo.
+            AI-powered scheduling, dispatching, invoicing, and client management &mdash; built for trade pros who want to grow without the growing pains. Starting at $39/mo.
           </p>
 
           <div className="flex justify-center gap-4 flex-wrap mb-8">
